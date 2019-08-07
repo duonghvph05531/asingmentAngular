@@ -14,5 +14,15 @@ export class ListCateComponent implements OnInit {
       this.category=data;
     });
   }
+  removeCategory(cate){
+    let conf = confirm(`Bạn có chắc chắn muốn xóa danh mục ${cate.name} ?`)
+  	if(conf){
+  		this.cateService.removeCategory(cate.id)
+			.subscribe(data => {
+				this.category = this.category
+						.filter(item => item.id != cate.id);
+			});
+    }
+  }
 
 }
