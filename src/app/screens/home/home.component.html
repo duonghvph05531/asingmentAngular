@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 banner"> 
+            <img src="https://gohola.vn/uploads/2017/11/hotel-banner-.jpg" class="img-fluid" alt="Image">
+        </div>
+        <div class="col-12 nav">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Trang chủ</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Chọn Tỉnh</a>
+                  <div class="dropdown-menu">
+                    <a *ngFor="let cate of category" class="dropdown-item" routerLink="category/detail/:id">{{cate.name}}</a>
+                    <div class="dropdown-divider"></div>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="adhome">Chỉnh Sửa</a>
+                </li>
+              </ul>
+        </div>
+        <div class="col-md-12">
+            <h2 class="listho">Danh sách khách sạn trên toàn quốc</h2>
+        </div>
+        <div class="col-4 hotel" *ngFor="let hotel of hotels">
+                <p><a routerLink="hotel/detail/{{hotel.id}}">{{hotel.hotel_name}}</a></p>
+                <img [src]="hotel.image" alt="" width="100px">
+        </div>
+    </div>
+</div>
