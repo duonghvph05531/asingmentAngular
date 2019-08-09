@@ -19,8 +19,8 @@
             <td><img [src]="hotel.image" alt="" width="150px"></td>
             <td>{{hotel.address}}</td>
             <td>
-                Sửa
-                Xóa
+                <a class="btn btn-success" routerLink="admin/edit/{{hotel.id}}">Sửa</a>
+                <button type="button" class="btn btn-danger" (click) = "removeHotel(hotel)">Xóa</button>
             </td>
         </tr>
     </tbody>

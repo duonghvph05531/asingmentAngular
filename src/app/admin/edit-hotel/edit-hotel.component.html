@@ -1,1 +1,43 @@
-<p>edit-hotel works!</p>
+<div class="row">
+	<div class="col-6 offset-sm-3">
+		<div class="text-center">
+			<h3>Tạo mới khách sạn</h3>
+		</div>
+		<form [formGroup]="hotelForm">
+		
+			<div class="form-group">
+				<label for="">Tên </label>
+				<input type="text" 
+						formControlName="hotel_name"
+						class="form-control">
+            </div>
+            <div class="form-group">
+				<label for="">Địa chỉ </label>
+				<input type="text" 
+						formControlName="address"
+						class="form-control">
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<img src="https://x.kinja-static.com/assets/images/logos/placeholders/default.png" *ngIf="hotelForm.value.image == ''" class="img-fluid">
+					<img [src]="hotelForm.value.image" *ngIf="hotelForm.value.image != ''" class="img-fluid">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="">Ảnh </label>
+				<input type="text"
+						formControlName="image" 
+						class="form-control">
+			</div>
+			<div class="text-center">
+				<button type="button" 
+						(click)="saveHotel()"
+						class="btn btn-sm btn-success">Lưu</button>
+				<a routerLink="/hotel" class="btn btn-sm btn-danger">Hủy</a>
+			</div>
+		</form>
+	</div>
+</div>
+<div>
+	{{hotelForm.value | json}}
+</div>

@@ -13,5 +13,16 @@ export class HotelService {
   getHotelById(hotelId){
     return this.http.get<any>(`${this.apiUrl}/${hotelId}`);
   }
+  editHotel(hotelId,data){
+    let url = `${this.apiUrl}/${hotelId}`;
+    return this.http.put<any>(url, data);
+  }
+  removeHotel(hotelId){
+    let removeUrl = `${this.apiUrl}/${hotelId}`;
+  	return this.http.delete<any>(removeUrl);
+  }
+  addHotel(data){
+    return this.http.put<any>(this.apiUrl,data);
+  }
 
 }
