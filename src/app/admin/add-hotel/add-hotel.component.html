@@ -1,1 +1,41 @@
-<p>add-hotel works!</p>
+<div class="row">
+        <div class="col-6 offset-sm-3">
+            <div class="text-center">
+                <h3>Tạo mới khách sạn</h3>
+            </div>
+            <div class="form-group">
+                <label for="">Tên khách sạn</label>
+                <input type="text" 
+                        [formControl]="hotel.hotel_name"
+                        class="form-control">
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <img src="https://x.kinja-static.com/assets/images/logos/placeholders/default.png" *ngIf="hotel.image.value == ''" class="img-fluid">
+                    <img [src]="hotel.image.value" *ngIf="hotel.image.value != ''" class="img-fluid">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="">Ảnh khách sạn</label>
+                <input type="text" 
+                        [formControl]="hotel.image" 
+                        class="form-control">
+            </div>
+            <div class="form-group">
+                    <label for="">Địa chỉ</label>
+                    <input type="text" 
+                            [formControl]="hotel.address"
+                            class="form-control">
+                </div>
+            <div class="text-center">
+                <button type="button" 
+                        (click)="savehotel()"
+                        class="btn btn-sm btn-success">Lưu</button>
+                <a routerLink="/" class="btn btn-sm btn-danger">Hủy</a>
+            </div>
+        </div>
+    </div>
+    <div>
+        {{hotel.name.value | json}}
+        {{hotel.image.value | json}}
+    </div>

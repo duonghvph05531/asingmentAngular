@@ -14,6 +14,7 @@ import { EditCateComponent } from './admin/edit-cate/edit-cate.component';
 import { EditHotelComponent } from './admin/edit-hotel/edit-hotel.component';
 import { ListCateComponent } from './admin/list-cate/list-cate.component';
 import { AdhomeComponent } from './admin/adhome/adhome.component';
+import { ListHotelComponent } from './admin/list-hotel/list-hotel.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { AdhomeComponent } from './admin/adhome/adhome.component';
     EditHotelComponent,
     ListCateComponent,
     AdhomeComponent,
+    ListHotelComponent,
   ],
   imports: [
     BrowserModule,

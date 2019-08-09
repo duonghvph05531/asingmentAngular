@@ -11,6 +11,7 @@ export class HotelService {
     return this.http.get<any[]>(this.apiUrl);
   }
   getHotelById(hotelId){
-    return this.http.get<any>(`${this.apiUrl}/${hotelId}`)
+    return this.http.get<any>(`${this.apiUrl}/${hotelId}`);
   }
+
 }

@@ -9,6 +9,7 @@ import {EditCateComponent} from './admin/edit-cate/edit-cate.component';
 import {EditHotelComponent} from './admin/edit-hotel/edit-hotel.component';
 import {ListCateComponent} from './admin/list-cate/list-cate.component';
 import {AdhomeComponent} from './admin/adhome/adhome.component';
+import {ListHotelComponent} from './admin/list-hotel/list-hotel.component';
 const routes:Routes=[
   {
     path:"",
@@ -45,6 +46,10 @@ const routes:Routes=[
   {
     path:"adhome",
     component:AdhomeComponent
+  },
+  {
+    path:"hotel",
+    component: ListHotelComponent
   }
 
 

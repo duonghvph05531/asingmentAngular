@@ -10,11 +10,18 @@ export class CategoryService {
   public getListCategory(){
     return this.http.get<any[]>(this.apiUrl);
   }
+  public getCateById(cateId){
+    return this.http.get<any>(`${this.apiUrl}/${cateId}`);
+  }
   public removeCategory(cateId){
     let removeUrl=`${this.apiUrl}/${cateId}`;
   	return this.http.delete<any>(removeUrl);
   }
   public addCategory(data){
     return this.http.post<any>(this.apiUrl,data);
+  }
+  public editCategory(cateId,data){
+    let url=`${this.apiUrl}/${cateId}`;
+    return this.http.put<any>(url,data);
   }
 }
