@@ -20,7 +20,7 @@ const routes:Routes=[
     component:DetailCateComponent
   },
   {
-    path:"hotel/detail/:id",
+    path:"category/:cateId/hotel/:id",
     component: DetailHotelComponent
   },
   {
@@ -28,7 +28,7 @@ const routes:Routes=[
     component:AddCateComponent
   },
   {
-    path:"hotel/admin/add",
+    path:"category/:cateId/hotel/admin/add",
     component:AddHotelComponent
   },
   {
@@ -36,7 +36,7 @@ const routes:Routes=[
     component:EditCateComponent
   },
   {
-    path:"hotel/admin/edit/:id",
+    path:"category/:cateId/hotel/admin/edit/:id",
     component:EditHotelComponent
   },
   {
@@ -48,7 +48,7 @@ const routes:Routes=[
     component:AdhomeComponent
   },
   {
-    path:"hotel",
+    path:"category/:id/hotel",
     component: ListHotelComponent
   }
 

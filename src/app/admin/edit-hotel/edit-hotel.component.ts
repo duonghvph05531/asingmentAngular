@@ -16,24 +16,30 @@ export class EditHotelComponent implements OnInit {
     hotel_name: new FormControl(''),
     image: new FormControl(''),
     address:new FormControl(''),
+    categoryId: new FormControl('')
     });
-    hotelId:"string"
+    hotelId="0";
+    cateId="0";
+    hotel={};
   ngOnInit() {
     this.hotelId = this.route.snapshot.params.id;
-  	this.hotelService.getHotelById(this.hotelId)
+    this.cateId =this.route.snapshot.params.cateId;
+  	this.hotelService.getHotelById(this.cateId,this.hotelId)
   					.subscribe(data => {
+              this.hotel=data;
   						this.hotelForm.setValue({
   							hotel_name: data.hotel_name,
                 image: data.image,
-                address:data.address
+                address:data.address,
+                categoryId:data.categoryId
   						});
-  					});
+            });
   }
   saveHotel(){
-  	this.hotelService.editHotel(this.hotelId, this.hotelForm.value)
+  	this.hotelService.editHotel(this.cateId,this.hotelId, this.hotelForm.value)
   					.subscribe(data => {
   						console.log(data);
-  						this.router.navigate(['/hotel']);
+  						this.router.navigate(['category/',this.cateId,'hotel']);
   					})
   }
 

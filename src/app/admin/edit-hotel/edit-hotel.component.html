@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-6 offset-sm-3">
 		<div class="text-center">
-			<h3>Tạo mới khách sạn</h3>
+			<h3>Sửa khách sạn</h3>
 		</div>
 		<form [formGroup]="hotelForm">
 		
@@ -9,6 +9,12 @@
 				<label for="">Tên </label>
 				<input type="text" 
 						formControlName="hotel_name"
+						class="form-control">
+			</div>
+			<div class="form-group">
+				<label for="">Danh mục </label>
+				<input readonly type="text" 
+						formControlName="categoryId"
 						class="form-control">
             </div>
             <div class="form-group">
@@ -33,11 +39,10 @@
 				<button type="button" 
 						(click)="saveHotel()"
 						class="btn btn-sm btn-success">Lưu</button>
-				<a routerLink="/hotel" class="btn btn-sm btn-danger">Hủy</a>
+				<a routerLink="/category/{{hotel.categoryId}}/hotel" class="btn btn-sm btn-danger">Hủy</a>
 			</div>
 		</form>
 	</div>
 </div>
 <div>
-	{{hotelForm.value | json}}
 </div>

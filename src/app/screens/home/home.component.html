@@ -11,7 +11,7 @@
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Chọn Tỉnh</a>
                   <div class="dropdown-menu">
-                    <a *ngFor="let cate of category" class="dropdown-item" routerLink="category/detail/:id">{{cate.name}}</a>
+                    <a *ngFor="let cate of category" class="dropdown-item" routerLink="category/{{cate.id}}/hotel">{{cate.name}}</a>
                     <div class="dropdown-divider"></div>
                   </div>
                 </li>
@@ -19,13 +19,6 @@
                   <a class="nav-link" routerLink="adhome">Chỉnh Sửa</a>
                 </li>
               </ul>
-        </div>
-        <div class="col-md-12">
-            <h2 class="listho">Danh sách khách sạn trên toàn quốc</h2>
-        </div>
-        <div class="col-4 hotel" *ngFor="let hotel of hotels">
-                <p><a routerLink="hotel/detail/{{hotel.id}}">{{hotel.hotel_name}}</a></p>
-                <img [src]="hotel.image" alt="" width="100px">
         </div>
     </div>
 </div>

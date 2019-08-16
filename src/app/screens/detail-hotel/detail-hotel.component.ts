@@ -13,6 +13,7 @@ export class DetailHotelComponent implements OnInit {
               private route:ActivatedRoute) { }
 
   id="0";
+  cateId="0";
   hotel={
     hotel_name:"",
     image:"",
@@ -20,8 +21,9 @@ export class DetailHotelComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.cateId=this.route.snapshot.params.cateId;
     this.id =this.route.snapshot.params.id;
-    this.hotelService.getHotelById(this.id).subscribe(data=>{
+    this.hotelService.getHotelById(this.cateId,this.id).subscribe(data=>{
     this.hotel=data;
     });
   }
